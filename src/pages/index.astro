@@ -1,0 +1,41 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+
+<Layout title="Welcome to Astro">
+	<main>
+	<p class="instructions">Welcome to your Astro site!
+		<br>
+	
+	<strong>Enjoy building your Astro site!</strong>
+	</p>
+	<ul role="list" class="link-card-grid">
+		<li>
+			<Card title="Hello Astro" 
+			time="2024-06-01" 
+			tags={['Astro', 'Documentation']}/>
+		</li>
+	</ul>
+</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+		font-weight: 800;
+	}
+	
+</style>
+
