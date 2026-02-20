@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Posts.astro"; // Importamos el layout de posts
+
+export async function getStaticPaths() {
+    const posts = await getCollection("tips");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Base title="AstroBuild Tips" frontmatter={post.data}>
+    <Content />
+</Base>
